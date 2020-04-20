@@ -10,6 +10,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
     <!-- Bootstrap CSS -->
+    <!-- build:css css/main.css -->
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -22,9 +23,10 @@
       rel="stylesheet"
       href="node_modules/bootstrap-social/bootstrap-social.css"
     />
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- endbuild -->
 
     <title>Ristorante con Fusion</title>
-    <link rel="stylesheet" href="css/styles.css" />
   </head>
 
   <body>
@@ -70,9 +72,7 @@
             </li>
           </ul>
           <span class="navbar-text">
-            <a data-toggle="modal" data-target="#loginModal">
-              <span class="fa fa-sign-in"></span> Login
-            </a>
+            <a id="loginButton"> <span class="fa fa-sign-in"></span> Login </a>
           </span>
         </div>
       </div>
@@ -303,11 +303,7 @@
             <img src="img/logo.png" alt="logo" class="img-fluid" />
           </div>
           <div class="col-12 col-sm-3 align-self-center">
-            <a
-              href="#reserve-a-table"
-              class="btn btn-warning form-control btn-sm"
-              data-toggle="modal"
-              data-target="#bookModal"
+            <a class="btn btn-warning form-control btn-sm" id="bookButton"
               >Reserve Table</a
             >
           </div>
@@ -407,7 +403,7 @@
           </div>
         </div>
       </div>
-      <!-- <div class="row row-content align-items-center">
+      <div class="row row-content align-items-center">
         <div class="col-12 col-sm-4 col-md-3 order-sm-last">
           <h3>Our Lipsmacking Culinary Creations</h3>
         </div>
@@ -431,9 +427,9 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
 
-      <!-- <div class="row row-content align-items-center">
+      <div class="row row-content align-items-center">
         <div class="col-12 col-sm-4 col-md-3">
           <h3>This Month's Promotions</h3>
         </div>
@@ -457,9 +453,9 @@
             />
           </div>
         </div>
-      </div> -->
+      </div>
 
-      <!-- <div class="row row-content align-items-center">
+      <div class="row row-content align-items-center">
         <div class="col-12 col-sm-4 col-md-3 order-sm-last">
           <h3>Meet our Culinary Specialists</h3>
         </div>
@@ -482,7 +478,7 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
 
       <!-- <div class="row row-content align-items-center" id="reserve-a-table">
         <div class="col-12 col-sm-8 offset-sm-2">
@@ -674,25 +670,12 @@
     </footer>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+    <!-- build:js js/main.js -->
+
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $("#mycarousel").carousel({ interval: 2000 });
-
-        $("#carouselButton").click(function () {
-          if ($("#carouselButton").children("span").hasClass("fa-pause")) {
-            $("#mycarousel").carousel("pause");
-            $("#carouselButton").children("span").removeClass("fa-pause");
-            $("#carouselButton").children("span").addClass("fa-play");
-          } else {
-            $("#mycarousel").carousel("cycle");
-            $("#carouselButton").children("span").removeClass("fa-play");
-            $("#carouselButton").children("span").addClass("fa-pause");
-          }
-        });
-      });
-    </script>
+    <script src="js/scripts.js"></script>
+    <!-- endbuild -->
   </body>
 </html>

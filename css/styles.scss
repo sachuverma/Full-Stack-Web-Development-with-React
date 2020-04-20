@@ -68,6 +68,20 @@ body {
   }
 }
 
+.modal-header {
+  background: $background-dark;
+  h4 {
+    color: floralwhite;
+  }
+  button {
+    color: floralwhite;
+  }
+}
+
+.modal-body {
+  background: $background-pale;
+}
+
 #carouselButton {
   right: 0px;
   position: absolute;
