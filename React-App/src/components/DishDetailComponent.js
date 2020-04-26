@@ -48,7 +48,6 @@ class DishDetail extends Component {
   }
 
   render() {
-    console.log("dishdetail render function");
     const dish = this.props.dish;
     if (dish == null) {
       return <div></div>;
