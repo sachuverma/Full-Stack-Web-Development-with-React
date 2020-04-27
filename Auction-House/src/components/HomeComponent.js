@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
 
-class Menu extends Component {
+class Home extends Component {
   render() {
-    const menu = this.props.products.map((product) => {
+    const allitems = this.props.products.map((product) => {
       return (
         <div key={product.id} className="col-12 col-md-4 mt-4">
           <Card>
@@ -19,10 +19,10 @@ class Menu extends Component {
 
     return (
       <div className="container">
-        <div className="row">{menu}</div>
+        <div className="row">{allitems}</div>
       </div>
     );
   }
 }
 
-export default Menu;
+export default Home;
