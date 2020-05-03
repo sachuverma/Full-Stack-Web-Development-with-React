@@ -108,6 +108,7 @@ class Contact extends Component {
             </BreadcrumbItem>
             <BreadcrumbItem active>Contact Us</BreadcrumbItem>
           </Breadcrumb>
+
           <div className="col-12">
             <h3>Contact Us</h3> <hr />
           </div>
@@ -116,6 +117,7 @@ class Contact extends Component {
           <div className="col-12">
             <h3>Location Information</h3>
           </div>
+
           <div className="col-12 col-sm-4 offset-sm-1">
             <h5>Our Address</h5>
             <address>
@@ -136,6 +138,7 @@ class Contact extends Component {
           <div className="col-12 col-sm-6 offset-sm-1">
             <h5>Map of our Location</h5>
           </div>
+
           <div className="col-12 col-sm-11 offset-sm-1">
             <div className="btn-group" role="group">
               <a
