@@ -3,8 +3,6 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Button,
-  Form,
-  FormGroup,
   Label,
   Col,
   Row,
@@ -111,6 +109,21 @@ class Contact extends Component {
                     id="firstname"
                     name="firstname"
                     placeholder="First Name"
+                    validators={{
+                      required,
+                      minLength: minLength(3),
+                      maxLength: maxLength(15),
+                    }}
+                  />
+                  <Errors
+                    className="text-danger"
+                    model=".firstname"
+                    show="touched"
+                    messages={{
+                      required: "Required",
+                      minLength: "Must be greater than 2 chars",
+                      maxLength: "Must be 15 or less chars",
+                    }}
                   />
                 </Col>
               </Row>
@@ -125,6 +138,21 @@ class Contact extends Component {
                     id="lastname"
                     name="lastname"
                     placeholder="Last Name"
+                    validators={{
+                      required,
+                      minLength: minLength(3),
+                      maxLength: maxLength(15),
+                    }}
+                  />
+                  <Errors
+                    className="text-danger"
+                    model=".lastname"
+                    show="touched"
+                    messages={{
+                      required: "Required",
+                      minLength: "Must be greater than 2 chars",
+                      maxLength: "Must be 15 or less chars",
+                    }}
                   />
                 </Col>
               </Row>
@@ -139,6 +167,23 @@ class Contact extends Component {
                     id="telnum"
                     name="telnum"
                     placeholder="Telephone Number"
+                    validators={{
+                      required,
+                      minLength: minLength(3),
+                      maxLength: maxLength(15),
+                      isNumber,
+                    }}
+                  />
+                  <Errors
+                    className="text-danger"
+                    model=".telnum"
+                    show="touched"
+                    messages={{
+                      required: "Required",
+                      minLength: "Must be greater than 2 numbers",
+                      maxLength: "Must be 15 or less numbers",
+                      isNumber: "Must be a number",
+                    }}
                   />
                 </Col>
               </Row>
@@ -153,6 +198,19 @@ class Contact extends Component {
                     id="email"
                     name="email"
                     placeholder="Email"
+                    validators={{
+                      required,
+                      validEmail,
+                    }}
+                  />
+                  <Errors
+                    className="text-danger"
+                    model=".email"
+                    show="touched"
+                    messages={{
+                      required: "Required",
+                      validEmail: "Must be a vaild email",
+                    }}
                   />
                 </Col>
               </Row>
