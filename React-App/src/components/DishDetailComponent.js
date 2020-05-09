@@ -205,13 +205,12 @@ const DishDetails = (props) => {
           <div className="col-12 col-md-5 m-1">
             <RenderDish dish={props.dish} />
           </div>
-          <div className="col-12 col-md-5 m-1">
+          <div className="col-12 col-md-5 m-1 text-justify">
             <RenderComments
               comments={props.comments}
               addComment={props.addComment}
               dishId={props.dish.id}
             />
-
             <CommentForm
               dish={props.dish}
               addComment={props.addComment}
