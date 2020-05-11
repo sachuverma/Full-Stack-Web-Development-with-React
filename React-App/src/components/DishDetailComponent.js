@@ -79,6 +79,7 @@ class CommentForm extends Component {
                   </Control.select>
                 </Col>
               </Row>
+
               <Row className="form-group">
                 <Label htmlFor="author" xs={12}>
                   Your Name
