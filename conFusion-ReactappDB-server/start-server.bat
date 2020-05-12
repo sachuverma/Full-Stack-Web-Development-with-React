@@ -5,9 +5,8 @@ Title conFusion JSON-Server
 ECHO.
 ECHO Starting conFusion JSON-Server on PORT: 3001
 ECHO (use ctrl+c to stop server)
-ECHO starting server at http://localhost:3001/
+ECHO starting server at 'http://localhost:3001/'
 START "" http://localhost:3001/
-
 ECHO ==============================================
 json-server --watch db.json -p 3001 -d 2000
 PAUSE
