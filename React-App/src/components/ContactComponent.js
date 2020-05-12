@@ -5,12 +5,11 @@ import {
   BreadcrumbItem,
   Button,
   Label,
-  Input,
   Col,
   Row,
 } from "reactstrap";
 import { Component } from "react";
-import { Control, Form, Errors, actions } from "react-redux-form";
+import { Control, Form, Errors } from "react-redux-form";
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
