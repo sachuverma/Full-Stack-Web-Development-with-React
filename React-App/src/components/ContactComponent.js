@@ -1,13 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import {
   Breadcrumb,
   BreadcrumbItem,
   Button,
   Label,
+  Input,
   Col,
   Row,
 } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Component } from "react";
 import { Control, Form, Errors, actions } from "react-redux-form";
 
 const required = (val) => val && val.length;
@@ -16,7 +18,6 @@ const minLength = (len) => (val) => val && val.length >= len;
 const isNumber = (val) => !isNaN(Number(val));
 const validEmail = (val) =>
   /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
-
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -25,10 +26,18 @@ class Contact extends Component {
   }
 
   handleSubmit(values) {
-    console.log("Current State is: " + JSON.stringify(values));
-    alert("Current State is: " + JSON.stringify(values));
+    //console.log('Current State is: ' + JSON.stringify(values));
+    //alert('Current State is: ' + JSON.stringify(values));
+    this.props.postFeedback(
+      values.firstname,
+      values.lastname,
+      values.telnum,
+      values.email,
+      values.agree,
+      values.contactType,
+      values.message
+    );
     this.props.resetFeedbackForm();
-    // event.preventDefault();
   }
 
   render() {
@@ -39,18 +48,17 @@ class Contact extends Component {
             <BreadcrumbItem>
               <Link to="/home">Home</Link>
             </BreadcrumbItem>
-            <BreadcrumbItem active>Contact Us</BreadcrumbItem>
+            <BreadcrumbItem active>Contact us</BreadcrumbItem>
           </Breadcrumb>
-
           <div className="col-12">
-            <h3>Contact Us</h3> <hr />
+            <h3>Contact Us</h3>
+            <hr />
           </div>
         </div>
         <div className="row row-content">
           <div className="col-12">
             <h3>Location Information</h3>
           </div>
-
           <div className="col-12 col-sm-4 offset-sm-1">
             <h5>Our Address</h5>
             <address>
@@ -71,7 +79,6 @@ class Contact extends Component {
           <div className="col-12 col-sm-6 offset-sm-1">
             <h5>Map of our Location</h5>
           </div>
-
           <div className="col-12 col-sm-11 offset-sm-1">
             <div className="btn-group" role="group">
               <a
@@ -81,7 +88,7 @@ class Contact extends Component {
               >
                 <i className="fa fa-phone"></i> Call
               </a>
-              <a role="button" className="btn btn-info text-white">
+              <a role="button" className="btn btn-info">
                 <i className="fa fa-skype"></i> Skype
               </a>
               <a
@@ -96,7 +103,7 @@ class Contact extends Component {
         </div>
         <div className="row row-content">
           <div className="col-12">
-            <h3>Send us your Feedback!</h3>
+            <h3>Send us your Feedback</h3>
           </div>
           <div className="col-12 col-md-9">
             <Form
@@ -105,19 +112,19 @@ class Contact extends Component {
             >
               <Row className="form-group">
                 <Label htmlFor="firstname" md={2}>
-                  First Name:
+                  First Name
                 </Label>
                 <Col md={10}>
                   <Control.text
                     model=".firstname"
-                    className="form-control"
                     id="firstname"
                     name="firstname"
                     placeholder="First Name"
+                    className="form-control"
                     validators={{
                       required,
+                      maxLength: maxLength(10),
                       minLength: minLength(3),
-                      maxLength: maxLength(15),
                     }}
                   />
                   <Errors
@@ -126,27 +133,27 @@ class Contact extends Component {
                     show="touched"
                     messages={{
                       required: "Required",
-                      minLength: "Must be greater than 2 chars",
-                      maxLength: "Must be 15 or less chars",
+                      minLength: "Must be greater than 2 characters",
+                      maxLength: "Must be 15 characters or less",
                     }}
                   />
                 </Col>
               </Row>
               <Row className="form-group">
                 <Label htmlFor="lastname" md={2}>
-                  Last Name:
+                  Last Name
                 </Label>
                 <Col md={10}>
                   <Control.text
                     model=".lastname"
-                    className="form-control"
                     id="lastname"
                     name="lastname"
                     placeholder="Last Name"
+                    className="form-control"
                     validators={{
                       required,
+                      maxLength: maxLength(10),
                       minLength: minLength(3),
-                      maxLength: maxLength(15),
                     }}
                   />
                   <Errors
@@ -155,27 +162,27 @@ class Contact extends Component {
                     show="touched"
                     messages={{
                       required: "Required",
-                      minLength: "Must be greater than 2 chars",
-                      maxLength: "Must be 15 or less chars",
+                      minLength: "Must be greater than 2 characters",
+                      maxLength: "Must be 15 characters or less",
                     }}
                   />
                 </Col>
               </Row>
               <Row className="form-group">
                 <Label htmlFor="telnum" md={2}>
-                  Contact No.:
+                  telephone no.
                 </Label>
                 <Col md={10}>
                   <Control.text
                     model=".telnum"
-                    className="form-control"
                     id="telnum"
                     name="telnum"
-                    placeholder="Telephone Number"
+                    placeholder="telephone no."
+                    className="form-control"
                     validators={{
                       required,
+                      maxLength: maxLength(10),
                       minLength: minLength(3),
-                      maxLength: maxLength(15),
                       isNumber,
                     }}
                   />
@@ -185,24 +192,24 @@ class Contact extends Component {
                     show="touched"
                     messages={{
                       required: "Required",
-                      minLength: "Must be greater than 2 numbers",
-                      maxLength: "Must be 15 or less numbers",
-                      isNumber: "Must be a number",
+                      minLength: "Must be greater than 2 characters",
+                      maxLength: "Must be 15 characters or less",
+                      isNumber: "not a number",
                     }}
                   />
                 </Col>
               </Row>
               <Row className="form-group">
                 <Label htmlFor="email" md={2}>
-                  Email:
+                  email
                 </Label>
                 <Col md={10}>
                   <Control.text
                     model=".email"
-                    className="form-control"
                     id="email"
                     name="email"
                     placeholder="Email"
+                    className="form-control"
                     validators={{
                       required,
                       validEmail,
@@ -214,7 +221,7 @@ class Contact extends Component {
                     show="touched"
                     messages={{
                       required: "Required",
-                      validEmail: "Must be a vaild email",
+                      validEmail: "not a email",
                     }}
                   />
                 </Col>
@@ -225,35 +232,35 @@ class Contact extends Component {
                     <Label check>
                       <Control.checkbox
                         model=".agree"
-                        className="form-check-input"
                         name="agree"
-                      />{" "}
-                      <strong>May We Contact You!</strong>
+                        className="form-check-input"
+                      />
+                      <strong>May we contact you</strong>
                     </Label>
                   </div>
                 </Col>
                 <Col md={{ size: 3, offset: 1 }}>
                   <Control.select
                     model=".contactType"
-                    className="form-control"
                     name="contactType"
+                    className="form-control"
                   >
-                    <option value="tel">Tel.</option>
-                    <option value="email">Email</option>
+                    <option>Tel.</option>
+                    <option>Email</option>
                   </Control.select>
                 </Col>
               </Row>
               <Row className="form-group">
-                <Label htmlFor="feedback" md={2}>
-                  Your Feedback:
+                <Label htmlFor="message" md={2}>
+                  Your feedback
                 </Label>
                 <Col md={10}>
                   <Control.textarea
                     model=".message"
-                    className="form-control"
                     id="message"
                     name="message"
                     rows="12"
+                    className="form-control"
                   />
                 </Col>
               </Row>
@@ -271,5 +278,4 @@ class Contact extends Component {
     );
   }
 }
-
 export default Contact;
