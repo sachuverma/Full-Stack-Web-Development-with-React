@@ -9,3 +9,10 @@
  Just download confusion-ReactappDB-server folder, it contains build from Reactapp and database in json format   
  Start webapp using `start-server.bat` file
 
+### 3. Tic-Tac-Toe 
+ A simple tic-tac-toe game using React.js
+ - Lets you play tic-tac-toe,
+ - Indicates when a player has won the game,
+ - Stores a game’s history as a game progresses,
+ - Allows players to review a game’s history and see previous versions of a game’s board.
+
