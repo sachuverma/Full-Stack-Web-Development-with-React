@@ -2,7 +2,7 @@
 
 ### 1. Bootstrap 4 Practice
  A simple restaurant website made using bootstrap framework
- [View site here](https://sachinverma53121.github.io/Front-End-Practice/Bootstrap4/dist/index.html)
+ [View site here](https://sachinverma53121.github.io/Full-Stack-Web-Development-with-React/Bootstrap4/dist/index.html)
 
 ### 2. React.JS
  Webapp can be run at your localhost:3001  
