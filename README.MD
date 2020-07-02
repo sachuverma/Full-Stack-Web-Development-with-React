@@ -7,7 +7,7 @@
 ### 2. React.JS
  Webapp can be run at your localhost:3001  
  Must have json-server npm module ( install using `npm i -g json-server` )   
- Just download confusion-ReactappDB-server folder, it contains build from Reactapp and database in json format   
+ Just download react_server folder, it contains build from Reactapp and database in json format   
  Start webapp using `start-server.bat` file
 
 ### 3. Tic-Tac-Toe 
