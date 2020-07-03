@@ -6,7 +6,7 @@ const hostname = 'localhost';
 const port = 69;
 
 const server = http.createServer((req, res) => {
-  console.log("Request for "+ req.url + " bu method "+ req.method);
+  console.log("Request for "+ req.url + " method "+ req.method);
   if(req.method == 'GET'){
     var fileUrl;
     if (req.url == '/') fileUrl = '/index.html';
@@ -34,7 +34,7 @@ const server = http.createServer((req, res) => {
   } else {
     res.statusCode = 404;
     res.setHeader('Content-Type', 'text/html');
-    res.end('<html><body>Error 404: req method not supported</body></html>');
+    res.end('<html><body>Error 404:'+ req.method +' method not supported</body></html>');
   }
 });
 
