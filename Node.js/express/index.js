@@ -14,25 +14,12 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
 const dishRouter = require('./routes/dishRouter');
+const promoRouter = require('./routes/promoRouter');
+const leaderRouter = require('./routes/leaderRouter');
 app.use('/dishes', dishRouter);
+app.use('/promotions', promoRouter);
+app.use('/leaders', leaderRouter);
 
-
-
-
-app.get('/dishes/:dishId', (req, res, next) => {
-  res.end('Will send the detail of /dishes/' + req.params.dishId);
-});
-
-app.post('/dishes/:dishId', (req, res, next) => {
-  res.statusCode = 403;
-  res.end('POST not supported on /dishes/'+ req.params.dishId);
-})
-app.put('/dishes/:dishId', (req, res, next) => {
-  res.end('Update dish /dishes/'+req.params.dishId);
-})
-app.delete('/dishes/:dishId', (req, res, next) => {
-  res.end('Deleting dishes/'+req.params.dishId);
-});
 
 app.use((req, res, next) => {
   res.statusCode = 200;
