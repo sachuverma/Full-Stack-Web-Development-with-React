@@ -4,3 +4,6 @@ React-App/node_modules
 Node.js/http-server/node_modules
 Node.js/express/node_modules
 Node.js/myExpressServer/node_modules
+Node.js/mongoDB/data
+Node.js/mongoDB/node_modules
+Node.js/nodeMongo/node_modules
